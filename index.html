@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog de cărți</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Catalogul meu de cărți</h1>
+  <details id="consoleElement">
+    <summary>Notificări</summary>
+    <div id="consoleContent"> </div>
+  </details>
+  <!--
+  <p>
+    <details id="usage">
+      <summary>Usage:</summary>
+    </details>
+  </p>
+-->
+  <details id="labelDetails">
+    <summary>Etichete:</summary>
+    <ul id="labelList"></ul>
+  </details><br>
+  <div class="author-index">
+    <details>
+      <summary>Index autori</summary> <select id="letterSelect">
+        <option value="All">Toți autorii</option>
+      </select>
+    </details>
+    <div id="authorList">Listă autori</div>
+  </div>
+  <div class="file-menu">
+    <button class="file-menu-button">Fișier</button>
+    <ul class="file-menu-dropdown">
+      <li><button onclick="saveToCSV()">Exportă</button></li>
+      <li><button onclick="loadFromCSV()">Importă</button></li>
+      <li>
+        <hr>
+      </li>
+      <li><button onclick="localStorageSave()">Salvează</button></li>
+      <li><button onclick="localStorageLoad()">Încarcă</button></li>
+      <li>
+        <hr>
+      </li>
+      <li><button onclick="clearBookList()">Șterge lista de cărți</button></li>
+    </ul>
+  </div>
+
+  <h2>Lista de cărți</h2>
+  <div id="bookList"></div>
+
+  <details id="addBookForm">
+    <summary id="summaryId" onclick="expandForm()">Formular carte</summary>
+    <form id="bookForm">
+      <div class="form-row">
+        <label for="bookid">Cotă:</label>
+        <input type="text" id="bookid" required>
+      </div>
+      <div class="form-row">
+        <label for="authors">Autor(i):</label>
+        <input type="text" id="authors" required>
+      </div>
+      <div class="form-row">
+        <label for="title">Titlu:</label>
+        <input type="text" id="title" required>
+      </div>
+      <div class="form-row">
+        <label for="genre">Domeniu:</label>
+        <input type="text" id="genre" required>
+      </div>
+      <div class="form-row">
+        <label for="subgenre">Etichetă (Folder):</label>
+        <input type="text" id="subgenre" required>
+      </div>
+      <div class="form-row">
+        <label for="publisher">Editura:</label>
+        <input type="text" id="publisher" required>
+      </div>
+      <div class="form-row">
+        <label for="year">Anul:</label>
+        <input type="text" id="year" required>
+      </div>
+      <button type="submit" onclick="addBook()">Adaugă carte</button>
+    </form>
+  </details>
+  <label for="edit">ID carte:</label>
+  <input type="text" id="edit" required>
+  <button onclick="editBook()">Editează</button>
+  <button onclick="deleteBook()">Șterge</button>
+
+  <p><button onclick="sortBookList()">Sort. după aut.</button><br>
+  </p>
+
+  <button onclick="showSearchForm()">Filtrează</button>
+
+  <div id="search-form" class="hidden"> <label for="substring">Caută:</label>
+    <input type="text" id="substring" placeholder="Subșir">
+    <button onclick="filterResults()">Caută</button>
+    <button onclick="deleteFilterBooks()">Șterge filtru</button>
+    <button onclick="closeSearchForm()">Închide</button>
+    <h2>Filtru de cărți</h2>
+    <div id="filterContainer"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

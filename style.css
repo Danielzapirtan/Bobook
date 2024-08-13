@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  color: white;
+  background-color: black;
+}
+
+#consoleContent {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  display: ;
+}
+
+#bookTable {
+  /* Add styles here */
+  display: grid;
+  overflow-y: auto;
+  height: 83px;
+  width: 80%;
+  /* Set the width of the table */
+  margin: 0 auto;
+  /* Center the table horizontally */
+  border-collapse: separate;
+  /* Remove gaps between table cells */
+}
+
+#bookTable th,
+#bookTable td {
+  /* Style table headers and cells */
+  padding: 10px;
+  /* Add padding to cells */
+  border: 5px solid #ddd;
+  /* Add a border to cells */
+}
+
+#bookList,
+#filterContainer {
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  overflow-y: auto;
+  height: 200px;
+}
+
+.book-item {
+  border: 1px solid #222;
+  padding: 10px;
+  margin: 10px;
+  background-color: #000000;
+}
+
+.book-item strong {
+  color: #ffffff;
+}
+
+.form-row {
+  display: flex;
+  /* Arrange elements horizontally */
+  margin-bottom: 10px;
+  /* Add some space between rows */
+}
+
+.form-row label {
+  display: block;
+  /* Make labels take up full line width */
+  width: 25%;
+  /* Adjust label width as needed */
+  margin-right: 10px;
+  /* Add some space between label and input */
+  text-align: right;
+  /* Align label text to the right */
+}
+
+.form-row input[type="text"] {
+  flex: 1 1 auto;
+  /* Make input fields flexible and fill remaining space */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* Add some rounded corners */
+}
+
+.hidden {
+  display: none;
+}
+
+.file-menu {
+  position: relative;
+  /* Needed for dropdown positioning */
+  display: inline-block;
+}
+
+.file-menu-button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.file-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  /* Positions the dropdown below the button */
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  padding: 0;
+  display: none;
+  /* Initially hidden */
+}
+
+.file-menu-dropdown li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.file-menu-dropdown li:hover {
+  background-color: #f0f0f0;
+  /* Hover effect */
+}
+
+.file-menu:hover .file-menu-dropdown {
+  display: block;
+  /* Shows dropdown on hover */
+}
